@@ -93,6 +93,7 @@ TEMPLATE_LOADERS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'mediagenerator.middleware.MediaMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -106,7 +107,33 @@ TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    '/Users/eschalon/Dropbox/Sites/noi_test/templates',
 )
+
+MEDIA_DEV_MODE = DEBUG
+DEV_MEDIA_URL = '/devmedia/'
+PRODUCTION_MEDIA_URL = '/media/'
+
+GLOBAL_MEDIA_DIRS = (os.path.join(os.path.dirname(__file__), 'static'),)
+
+MEDIA_BUNDLES = (
+    ('main.css',
+        'css/reset.css',
+        'css/style.css',
+    ),
+    ('main.js',
+        'js/jquery.js',
+        'js/jquery.autocomplete.js',
+    ),
+)
+
+ROOT_MEDIA_FILTERS = {
+    'js': 'mediagenerator.filters.yuicompressor.YUICompressor',
+    'css': 'mediagenerator.filters.yuicompressor.YUICompressor',
+}
+
+YUICOMPRESSOR_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'yuicompressor.jar')
+
 
 INSTALLED_APPS = (
     'django.contrib.auth',
@@ -116,6 +143,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+    'mediagenerator',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
