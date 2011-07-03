@@ -1,5 +1,5 @@
 # Django settings for noi_test project.
-
+import os
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
@@ -50,13 +50,13 @@ MEDIA_ROOT = ''
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = ''
+STATIC_ROOT = '/Users/eschalon/Dropbox/Sites/noi_test/static/'
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
@@ -65,13 +65,14 @@ STATIC_URL = '/static/'
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
 # Examples: "http://foo.com/static/admin/", "/static/admin/".
-ADMIN_MEDIA_PREFIX = '/static/admin/'
+ADMIN_MEDIA_PREFIX = STATIC_URL + "admin/"
 
 # Additional locations of static files
 STATICFILES_DIRS = (
     # Put strings here, like "/home/html/static" or "C:/www/django/static".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
+    #STATIC_ROOT
 )
 
 # List of finder classes that know how to find static files in
@@ -110,29 +111,37 @@ TEMPLATE_DIRS = (
     '/Users/eschalon/Dropbox/Sites/noi_test/templates',
 )
 
-MEDIA_DEV_MODE = DEBUG
-DEV_MEDIA_URL = '/devmedia/'
-PRODUCTION_MEDIA_URL = '/media/'
-
-GLOBAL_MEDIA_DIRS = (os.path.join(os.path.dirname(__file__), 'static'),)
-
-MEDIA_BUNDLES = (
-    ('main.css',
-        'css/reset.css',
-        'css/style.css',
-    ),
-    ('main.js',
-        'js/jquery.js',
-        'js/jquery.autocomplete.js',
-    ),
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages"
 )
+#MEDIA_DEV_MODE = DEBUG
+#DEV_MEDIA_URL = '/devmedia/'
+#PRODUCTION_MEDIA_URL = '/media/'
 
-ROOT_MEDIA_FILTERS = {
-    'js': 'mediagenerator.filters.yuicompressor.YUICompressor',
-    'css': 'mediagenerator.filters.yuicompressor.YUICompressor',
-}
+#GLOBAL_MEDIA_DIRS = (os.path.join(os.path.dirname(__file__), 'static'),)
 
-YUICOMPRESSOR_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'yuicompressor.jar')
+#MEDIA_BUNDLES = (
+#    ('main.css',
+#        'css/reset.css',
+#        'css/style.css',
+#    ),
+#    ('main.js',
+#        'js/jquery.js',
+#        'js/jquery.validate.js',
+#    ),
+#)
+
+#ROOT_MEDIA_FILTERS = {
+#    'js': 'mediagenerator.filters.yuicompressor.YUICompressor',
+#    'css': 'mediagenerator.filters.yuicompressor.YUICompressor',
+#}
+
+#YUICOMPRESSOR_PATH = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'yuicompressor.jar')
 
 
 INSTALLED_APPS = (
@@ -142,8 +151,10 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'grappelli',
     'django.contrib.admin',
-    'mediagenerator',
+    'organizations',
+    #'mediagenerator',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 )
