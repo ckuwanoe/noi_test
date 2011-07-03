@@ -14,6 +14,6 @@ urlpatterns = patterns('',
     (r'^$', include('organizations.urls')),
     (r'^orgs/', include('organizations.urls')),
     # Uncomment the next line to enable the admin:
-    #(r'^grappelli/', include('grappelli.urls')),
+    (r'^grappelli/', include('grappelli.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
