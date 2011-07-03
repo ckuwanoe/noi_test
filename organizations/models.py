@@ -6,7 +6,7 @@ class Organization(models.Model):
     founded_date = models.DateField()
     legal_status = models.CharField(max_length=50)
     number_staff = models.IntegerField('number of staff')
-    contact_person = models.ForeignKey('Person', related_name='+')
+    contact_person = models.ForeignKey('Person', related_name='+', null=True, blank=True)
     
     def __unicode__(self):
             return self.name
@@ -52,4 +52,4 @@ class Internal(models.Model):
     activity_level = models.CharField(max_length=4, choices=ACTIVITY_CHOICES)
     
     def __unicode__(self):
-            return self.name
+            return self.organization.name
