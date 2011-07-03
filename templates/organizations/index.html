@@ -19,7 +19,7 @@
 					<td>{{ org.founded_date }}</td>
 					<td>{{ org.legal_status }}</td>
 					<td>{{ org.number_staff }}</td>
-					<td><a href="/persons/{{ org.contact_person.id }}">{{ org.contact_person.name }}</a></td>
+					<td><a href="/orgs/staff/{{ org.contact_person.id }}">{{ org.contact_person.name }}</a></td>
 				</tr>
     {% endfor %}
     	</tbody>
