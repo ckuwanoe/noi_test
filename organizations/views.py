@@ -6,5 +6,5 @@ def index(request):
     return render_to_response('organizations/index.html', {'orgs': orgs})
     
 def detail(request, organization_id):
-    p = get_object_or_404(Poll, pk=organization_id)
-    return render_to_response('organizations/detail.html', {'organization': p})
+    org = get_object_or_404(Organization, pk=organization_id)
+    return render_to_response('organizations/detail.html', {'org': org})
