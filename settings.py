@@ -127,12 +127,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 #MEDIA_BUNDLES = (
 #    ('main.css',
-#        'css/reset.css',
-#        'css/style.css',
+#        'organizations/static/css/handheld.css',
+#        'organizations/static/css/style.sass',
 #    ),
 #    ('main.js',
-#        'js/jquery.js',
-#        'js/jquery.validate.js',
+#        'organizations/static/js/libs/modernizr-1.7.min.js',
+#        'organizations/static/js/libs/jquery-1.5.1.min.js',
 #    ),
 #)
 

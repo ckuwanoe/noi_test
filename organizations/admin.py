@@ -3,7 +3,7 @@ from organizations.models import Person
 from organizations.models import Internal
 from django.contrib import admin
 
-class PersonInline(admin.TabularInline):
+class PersonInline(admin.StackedInline):
     model = Person
     extra = 0
 
@@ -13,10 +13,10 @@ class InternalInline(admin.TabularInline):
     
 class OrganizationAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Organization', {'fields': ['name', 'founded_date', 'legal_status', 'number_staff', 'contact_person']}),
+        ('Organization', {'fields': ['name', 'founded_date', 'legal_status', 'number_staff']}),
+        ('Main Contact Person', {'fields' : ['contact_person'], 'classes' : ['collapse', 'closed']}),
     ]
     inlines = [PersonInline, InternalInline]
 
 admin.site.register(Organization, OrganizationAdmin)
 admin.site.register(Person)
-admin.site.register(Internal)

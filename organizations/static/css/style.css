@@ -85,7 +85,8 @@ body {
 body #container nav {
     width: 100%;
     height: 25px;
-    background: #82bc41;
+    background: #3a3a3a;
+    margin: 0 0 25px 0;
 }
 
 body #container nav #userbar {
@@ -104,13 +105,13 @@ body #container nav #userbar a {
 }
 
 #container h1 {
-    margin: 5px 0;
+    margin: 25px 0;
     font-weight: 300;
     font-size: 2.2em;
 }
 
 #main {
-    margin: 45px 0;
+    margin: 25px 0;
     background: #f9f9f9;
     width: 100%;
 }
@@ -128,10 +129,10 @@ body #container nav #userbar a {
     margin: 0 auto;
 }
 
-#list a {
+#list a, #display a {
     text-decoration: none;
     font-weight: 500;
-    color: #82bc41;
+    color: #309bbf;
 }
 
 #list th, #list td {
@@ -144,8 +145,8 @@ body #container nav #userbar a {
 }
 
 #list th {
-    color: #f9f9f9;
-    background-color: #82bee8;
+    color: #3a3a3a;
+    background-color: #e6e6e6;
     border: none; 
     font-weight: 500;
     font-size: 1.1em;
@@ -179,8 +180,8 @@ body #container nav #userbar a {
 }
 
 #display ul li.title {
-    color: #f9f9f9;
-    background-color: #82bee8;
+    color: #3a3a3a;
+    background-color: #e6e6e6;
     border: none; 
     font-weight: 500;
     font-size: 1.1em;

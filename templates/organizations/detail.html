@@ -6,6 +6,18 @@
 		<ul>
 			<li class="title">Organization</li>
 			<li>Name: {{ org.name }}</li>
+			<li>Founded: {{ org.founded_date }}</li>
+			<li>Type: {{ org.legal_status }}</li>
+			<li>Staff Size: {{ org.number_staff }}</li>
+			<li>Contact Person: <a href="/orgs/staff/{{ org.contact_person.id }}">{{ org.contact_person.name }}</a></li>
+			<li class="title">Other Staff</li>
+			{% for person in org.person_set.all %}
+				{% if org.contact_person.id != person.id %}
+					<li>Name: <a href="/orgs/staff/{{ person.id }}">{{ person.name }}</a></li>
+				{% else %}
+					<li>No other staff listed for organization</li>
+				{% endif %}
+			{% endfor %}
 		</ul>
 	</div>
 </div>
