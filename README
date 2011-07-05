@@ -1,0 +1,14 @@
+Example project created for NOI
+
+Developed on
+-Mac OSX 10.6.8
+-Python 2.6.6
+-Django 1.3
+
+Packages used
+-Django Admin
+-Grappelli
+-Django-mediagenerator (found to use sass - disabled due to the complexity added)
+
+Viewable at
+-http://4ngf.localtunnel.com
