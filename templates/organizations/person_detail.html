@@ -5,12 +5,13 @@
 		<ul>
 			<li class="title">Staff Member</li>
 			<li>Name: {{ person.name }}</li>
-			<li>Organization: {{ person.organization.name }}</li>
+			<li>Organization: <a href="/orgs/{{ person.organization.id }}">{{ person.organization.name }}</a></li>
 			<li>Email: {{ person.email }}</li>
 			<li>Phone #: {{ person.phone }}</li>
 			<li>Attended Training?: {{ person.attended_trainings }}</li>
 			<li>Electoral Experience?: {{ person.electoral_experience }}</li>
 			<li>Active Projects: {{ person.active_projects }}</li>
+			<li><a href="/"><input type="button" class="home" value="Home"></a></li>
 		</ul>
 	</div>
 </div>

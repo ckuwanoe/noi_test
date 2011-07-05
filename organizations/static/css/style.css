@@ -100,6 +100,10 @@ body #container nav #userbar a {
     text-decoration: none;
 }
 
+body #container nav #userbar a:hover {
+    color: #e6e6e6;
+}
+
 #container {
     margin: 0 auto;
 }
@@ -108,6 +112,15 @@ body #container nav #userbar a {
     margin: 25px 0;
     font-weight: 300;
     font-size: 2.2em;
+}
+
+#container h1 a {
+    color: #3a3a3a;
+    text-decoration: none;
+}
+
+#container h1 a:hover {
+    color: #309bbf;
 }
 
 #main {
@@ -166,6 +179,30 @@ body #container nav #userbar a {
     font-weight: bold; 
 }
 
+.pagination {
+    text-align: left;
+    font-size: 0.8em;
+}
+
+.pagination .step-links a {
+    color: #309bbf;
+    text-decoration: none;
+}
+
+.pagination .step-links a:hover {
+    color: #3a3a3a;
+}
+
+.pagination .current a {
+    color: #3a3a3a;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.pagination .current a:hover {
+    color: #e6e6e6;
+}
+
 #display {
     border: 1px solid #dbdbdb; 
 }
@@ -185,6 +222,44 @@ body #container nav #userbar a {
     border: none; 
     font-weight: 500;
     font-size: 1.1em;
+}
+
+/* button style */
+input[type="button"].home {
+  background: #e3e3e3;
+  border: 1px solid #bbb;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  -webkit-box-shadow: inset 0 0 1px 1px #f6f6f6;
+  box-shadow: inset 0 0 1px 1px #f6f6f6;
+  color: #333;
+  font-family: "proxima-nova", "helvetica neue", helvetica, arial, sans-serif;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1;
+  padding: 8px 0 9px;
+  text-align: center;
+  text-shadow: 0 1px 0 #fff;
+  width: 150px;
+}
+
+input[type="button"].home:hover {
+  background: #d9d9d9;
+  -moz-box-shadow: inset 0 0 1px 1px #eaeaea;
+  -webkit-box-shadow: inset 0 0 1px 1px #eaeaea;
+  box-shadow: inset 0 0 1px 1px #eaeaea;
+  color: #222;
+  cursor: pointer;
+}
+
+input[type="button"].home:active {
+  background: #d0d0d0;
+  -moz-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  -webkit-box-shadow: inset 0 0 1px 1px #e3e3e3;
+  box-shadow: inset 0 0 1px 1px #e3e3e3;
+  color: #000;
 }
 
 .ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }

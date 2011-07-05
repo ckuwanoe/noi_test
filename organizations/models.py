@@ -45,7 +45,7 @@ class Internal(models.Model):
         (u'Re', u'Reactive'),
     )
     
-    organization = models.ForeignKey(Organization)
+    organization = models.ForeignKey(Organization, unique=True)
     relationship_status = models.CharField(max_length=4, choices=RELATIONSHIP_CHOICES)
     familiarity = models.CharField(max_length=2, choices=ENUM_CHOICES)
     action_steps = models.TextField()

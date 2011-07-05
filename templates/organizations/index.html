@@ -13,7 +13,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				{% for org in orgs %}
+				{% for org in orgs.object_list %}
 				<tr>
         	<td><a href="/orgs/{{ org.id }}/">{{ org.name }}</a></td>
 					<td>{{ org.founded_date }}</td>
@@ -21,8 +21,27 @@
 					<td>{{ org.number_staff }}</td>
 					<td><a href="/orgs/staff/{{ org.contact_person.id }}">{{ org.contact_person.name }}</a></td>
 				</tr>
-    {% endfor %}
-    	</tbody>
+    		{% endfor %}
+				<tr>
+					<td colspan="5">
+						<div class="pagination">
+						    <span class="step-links">
+						        {% if orgs.has_previous %}
+						            <a href="?page={{ orgs.previous_page_number }}">previous</a>
+						        {% endif %}
+
+						        <span class="current">
+						            Page {{ orgs.number }} of {{ orgs.paginator.num_pages }}.
+						        </span>
+
+						        {% if orgs.has_next %}
+						            <a href="?page={{ orgs.next_page_number }}">next</a>
+						        {% endif %}
+						    </span>
+						</div>
+					</td>
+				</tr>
+			</tbody>
 		</table>
 	{% else %}
 		<p>No organizations listed. Would you like to <a href="/admin">add</a> some?</p>
